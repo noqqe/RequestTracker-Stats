@@ -47,8 +47,12 @@ for data in $SUM; do
     }
 
     # Scaling for values. You can use values up to
-    # 1.000.000 without your terminal gets broken
-    if [ $VALUE -gt 1000000 ]; then 
+    # 100.000.000 without your terminal gets broken
+    if [ $VALUE -gt 100000000 ]; then 
+        factorincrease 10000000 
+    elif [ $VALUE -gt 10000000 ]; then 
+        factorincrease 1000000 
+    elif [ $VALUE -gt 1000000 ]; then 
         factorincrease 100000 
     elif [ $VALUE -gt 100000 ]; then 
         factorincrease 10000 
