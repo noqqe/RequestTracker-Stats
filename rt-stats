@@ -1,0 +1,20 @@
+#!/bin/bash
+# rt-stats: generate statistics of your RequestTracker 
+# Copyright: (C) 2011 Florian Baumann <flo@noqqe.de>
+# License: GPL-3 <http://www.gnu.org/licenses/gpl-3.0.txt>
+# Date: Tuesday 2011-04-12
+
+### Include configuration
+source conf/rt-stats.conf
+
+### Load modules
+
+# monthly resolved by user
+echo "Monthly Resolved Ticket Statistic for $(date +%Y-%m)"
+echo "---------------------------------------------------"
+source modules/most-active-user-this-month.bash
+
+# yearly resolved by user
+echo "Yearly Resolved Ticket Statistic for $(date +%Y)"
+echo "---------------------------------------------------"
+source modules/most-active-user-this-year.bash
