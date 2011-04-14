@@ -10,11 +10,37 @@ source conf/rt-stats.conf
 ### Load modules
 
 # monthly resolved by user
-echo "Monthly Resolved Ticket Statistic for $(date +%Y-%m)"
+echo "Resolved Ticket Statistic for this Month$(date +%Y-%m)"
 echo "---------------------------------------------------"
 source modules/most-active-user-this-month.bash
+echo
 
 # yearly resolved by user
-echo "Yearly Resolved Ticket Statistic for $(date +%Y)"
+echo "Resolved Ticket Statistic for this Year $(date +%Y)"
 echo "---------------------------------------------------"
 source modules/most-active-user-this-year.bash
+echo 
+
+# yearly resolved by user
+echo "Most Ticket Status for this Month $(date +%Y-%m)"
+echo "---------------------------------------------------"
+source modules/most-ticket-actions-this-month.bash 
+echo 
+
+# yearly resolved by user
+echo "Most Ticket Status for this Year $(date +%Y)"
+echo "---------------------------------------------------"
+source modules/most-ticket-actions-this-year.bash 
+echo 
+
+# yearly resolved by user
+echo "Most Active Queue for this Month $(date +%Y-%m)"
+echo "---------------------------------------------------"
+source modules/most-active-queue-this-month.bash
+echo 
+
+# yearly resolved by user
+echo "Most Active Queue for this Year $(date +%Y)"
+echo "---------------------------------------------------"
+source modules/most-active-queue-this-year.bash
+echo 

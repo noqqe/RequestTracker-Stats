@@ -67,6 +67,7 @@ for data in $SUM; do
 
     KEY=$(echo $data | awk -F: '{printf $1}')
     VALUE=$(echo $data | awk -F: '{print $2}')
+    REAL_VALUE="$VALUE"
 
     # Do scaling action for terminal
     if [ ! -z ${BIGFLAG:-0} ]; then 
@@ -92,10 +93,11 @@ for data in $SUM; do
         
         ((COUNTER++))
 
-        echo -n "$OUTPUTCHAR"
         
         if [ $COUNTER -ge $VALUE ]; then
-            echo -n " ($VALUE)" ; echo 
+            echo -n " (${REAL_VALUE:-0})" ; echo 
+        else 
+            echo -n "$OUTPUTCHAR"
         fi
 
     done
