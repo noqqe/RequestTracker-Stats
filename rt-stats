@@ -44,3 +44,15 @@ echo "Most Active Queue for this Year $(date +%Y)"
 echo "---------------------------------------------------"
 source modules/most-active-queue-this-year.bash
 echo 
+
+# yearly resolved by user
+echo "Most Active Creators for this Month $(date +%Y-%m)"
+echo "---------------------------------------------------"
+source modules/most-active-creators-this-month.bash 
+echo 
+
+# yearly resolved by user
+echo "Most Active Creators for this Year $(date +%Y)"
+echo "---------------------------------------------------"
+source modules/most-active-creators-this-year.bash 
+echo 

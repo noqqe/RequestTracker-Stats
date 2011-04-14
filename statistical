@@ -31,7 +31,9 @@ for data in $SUM; do
 
     # Doing the right formatting for a global 
     # tabulator spaces work
-    if [ ${#KEY} -gt 15 ]; then 
+    if [ ${#KEY} -gt 23 ]; then 
+        BIGKEY=3
+    elif [ ${#KEY} -gt 15 ]; then 
         BIGKEY=2
     elif [ ${#KEY} -gt 7 ]; then 
         BIGKEY=1
@@ -60,12 +62,13 @@ for data in $SUM; do
         factorincrease 1
     fi
 
-done 
+done
 
 # Start graphing
 for data in $SUM; do
 
     KEY=$(echo $data | awk -F: '{printf $1}')
+    REAL_KEY=$KEY
     VALUE=$(echo $data | awk -F: '{print $2}')
     REAL_VALUE="$VALUE"
 
@@ -76,9 +79,20 @@ for data in $SUM; do
             VALUE=1
         fi
     fi
+    
+    # Do scaling action for terminal
+    if [ ${#KEY} -ge 23 ]; then 
+        KEY=${KEY:1:16}
+    fi
 
     # Writing the graph
-    if [ $BIGKEY -eq 2 -a ${#KEY} -lt 8 ]; then
+    if [ $BIGKEY -eq 3 -a ${#KEY} -lt 8 ]; then
+        echo -n -e "${KEY}\t\t\t\t"
+    elif [ $BIGKEY -eq 3 -a ${#KEY} -lt 15 ]; then
+        echo -n -e "${KEY}\t\t\t"
+    elif [ $BIGKEY -eq 3 -a ${#KEY} -lt 23 ]; then
+        echo -n -e "${KEY}\t\t"
+    elif [ $BIGKEY -eq 2 -a ${#KEY} -lt 8 ]; then
         echo -n -e "${KEY}\t\t\t"
     elif [ $BIGKEY -eq 2 -a ${#KEY} -lt 15 ]; then
         echo -n -e "${KEY}\t\t"
