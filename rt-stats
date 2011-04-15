@@ -65,6 +65,11 @@ echo "---------------------------------------------------"
 source modules/creators-this-year.bash 
 echo 
 
+echo "Created tickets this year per month ($(date +%Y))"
+echo "---------------------------------------------------"
+source modules/ticket-rate.bash 
+echo 
+
 echo "Monthly activity by user for this year ($(date +%Y))"
 echo "---------------------------------------------------"
 source modules/user-activity.bash 
