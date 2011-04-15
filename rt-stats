@@ -5,7 +5,15 @@
 # Date: Tuesday 2011-04-12
 
 ### Include configuration
-source conf/rt-stats.conf
+if [ -e conf/rt-stats.conf ]; then
+    source conf/rt-stats.conf
+    if [ -e conf/rt-stats.local ]; then
+        source conf/rt-stats.local
+    fi
+else
+    echo "Error: Could not find config file conf/rt-stats.conf"
+    exit 1
+fi
 
 ### Load modules
 
