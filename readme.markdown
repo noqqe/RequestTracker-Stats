@@ -36,14 +36,14 @@ month. See modules/ for all statistic data.
     Resolved ticket statistic for this month (April)
     ---------------------------------------------------
     sebasto   |##################### (22)
-    jawa    |##################### (22)
-    ronie   |############ (13)
+    jawa      |##################### (22)
+    ronie     |############ (13)
     noqqe     |######### (10)
     akuweber  |######## (9)
     mfwedler  |####### (8)
-    vrte   |# (2)
+    vrte      |# (2)
     fbaumann  |# (2)
-    akolt   | (1)
+    akolt     | (1)
 
 ### Send it periodically to your team
 
