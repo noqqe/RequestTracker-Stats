@@ -1,5 +1,8 @@
 # RequestTracker-Stats
-RequestTracker-Stats is a simple and easy way to analyze the data in your ticket system. I got to confess that it's kind of a competition thing to squash tickets at work :P At least this was my intention for writing up this. :P 
+RequestTracker-Stats is a simple and easy way to analyze the data in your ticket
+system (RequestTracker v3.8 from BestPractice). I got to confess that it's kind of a competition thing to squash tickets at work :P At least this was my intention for writing up this. :P 
+
+See http://bestpractical.com/rt/ for Details.
 
 Basically its just written in Bash and a byte of MySQL magic to generate this statistically information and showing up on your local terminal. 
 
