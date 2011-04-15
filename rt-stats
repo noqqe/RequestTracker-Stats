@@ -18,49 +18,55 @@ fi
 ### Load modules
 
 # monthly resolved by user
-echo "Resolved Ticket Statistic for this Month$(date +%Y-%m)"
+echo "Resolved Ticket Statistic for this Month ($(date +%Y-%m))"
 echo "---------------------------------------------------"
-source modules/most-active-user-this-month.bash
+source modules/user-this-month.bash
 echo
 
 # yearly resolved by user
-echo "Resolved Ticket Statistic for this Year $(date +%Y)"
+echo "Resolved Ticket Statistic for this Year ($(date +%Y))"
 echo "---------------------------------------------------"
-source modules/most-active-user-this-year.bash
+source modules/user-this-year.bash
 echo 
 
 # yearly resolved by user
-echo "Most Ticket Status for this Month $(date +%Y-%m)"
+echo "Ticket Status for this Month ($(date +%Y-%m))"
 echo "---------------------------------------------------"
-source modules/most-ticket-actions-this-month.bash 
+source modules/ticket-actions-this-month.bash 
 echo 
 
 # yearly resolved by user
-echo "Most Ticket Status for this Year $(date +%Y)"
+echo "Ticket Status for this Year ($(date +%Y))"
 echo "---------------------------------------------------"
-source modules/most-ticket-actions-this-year.bash 
+source modules/ticket-actions-this-year.bash 
 echo 
 
 # yearly resolved by user
-echo "Most Active Queue for this Month $(date +%Y-%m)"
+echo "Queues for this Month ($(date +%Y-%m))"
 echo "---------------------------------------------------"
-source modules/most-active-queue-this-month.bash
+source modules/queue-this-month.bash
 echo 
 
 # yearly resolved by user
-echo "Most Active Queue for this Year $(date +%Y)"
+echo "Queues for this Year ($(date +%Y))"
 echo "---------------------------------------------------"
-source modules/most-active-queue-this-year.bash
+source modules/queue-this-year.bash
 echo 
 
 # yearly resolved by user
-echo "Most Active Creators for this Month $(date +%Y-%m)"
+echo "Most Active Creators for this Month ($(date +%Y-%m))"
 echo "---------------------------------------------------"
-source modules/most-active-creators-this-month.bash 
+source modules/creators-this-month.bash 
 echo 
 
 # yearly resolved by user
-echo "Most Active Creators for this Year $(date +%Y)"
+echo "Most Active Creators for this Year ($(date +%Y))"
 echo "---------------------------------------------------"
-source modules/most-active-creators-this-year.bash 
+source modules/creators-this-year.bash 
+echo 
+
+# monthly activity by user 
+echo "Activity by User ($(date +%Y))"
+echo "---------------------------------------------------"
+source modules/user-activity.bash 
 echo 
