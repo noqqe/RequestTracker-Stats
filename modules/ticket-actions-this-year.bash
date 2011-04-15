@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mysql --user="$stats_dbuser" --password="$stats_dbpassword" --batch -e \
+mysql $stats_sqlopts -e \
         "use \"$stats_database\" ;\
         SELECT Tickets.Status, COUNT(DISTINCT Tickets.EffectiveID) AS Tickets \
         FROM Tickets \

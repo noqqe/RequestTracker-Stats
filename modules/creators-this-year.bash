@@ -1,5 +1,5 @@
 #!/bin/bash
-mysql --user="$stats_dbuser" --password="$stats_dbpassword" --batch -e \
+mysql $stats_sqlopts -e \
         "use \"$stats_database\" ;\
         SELECT COUNT(DISTINCT EffectiveID) AS Tickets, Users.EmailAddress \
         FROM Tickets, Users \
