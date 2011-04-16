@@ -1,6 +1,6 @@
 # RequestTracker-Stats
 RequestTracker-Stats is a simple and easy way to analyze the data in your ticket
-system (RequestTracker v3.8 from BestPractice). I got to confess that it's kind of a competition thing to squash tickets at work :P At least this was my intention for writing up this. :P 
+system (RequestTracker v3.8 from BestPractical). I got to confess that it's kind of a competition thing to squash tickets at work :P At least this was my intention for writing up this. :P 
 
 See [http://bestpractical.com/rt/](http://bestpractical.com/rt/) for Details.
 
@@ -11,6 +11,8 @@ Creating your local copy:
 
     $ cd /usr/local/bin
     $ git clone git@github.com:noqqe/requesttracker-stats
+    $ git submodule init
+    $ git submodule update
 
 Configure your database connection
 
