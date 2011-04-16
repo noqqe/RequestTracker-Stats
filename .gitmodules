@@ -1,3 +1,3 @@
 [submodule "statistical"]
-  path = statistical/
+  path = statistical
   url = git://github.com/noqqe/statistical
