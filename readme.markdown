@@ -10,7 +10,8 @@ Basically it's just written in Bash and a byte of MySQL magic to generate this s
 Creating your local copy:
 
     $ cd /usr/local/bin
-    $ git clone git@github.com:noqqe/requesttracker-stats
+    $ git clone git@github.com:noqqe/requesttracker-stats requesttracker-stats
+    $ cd requesttracker-stats
     $ git submodule init
     $ git submodule update
 
@@ -26,9 +27,16 @@ Configure your database connection
     stats_dbuser="statistic"
     stats_dbpassword="passw0rd"
 
-Start using rt-stats :P 
+Start using RequestTracker-Stats. At first you can just hit execute and watch,
+which informations are showing up. 
 
-    $ rt-stats
+    $ ./rt-stats
+
+Later, if you will use this seriously you can start disabling modules in
+rt-stats file if there are not necessary for you. Simply by commenting out the `source` command. If you would write
+new modules (what would be a great thing for me ;)) you could take a look at the
+module files. If you are ready, than feel free to mail me and/or send a pull
+request on github.
 
 ### Examples
 
