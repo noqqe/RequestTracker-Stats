@@ -61,7 +61,8 @@ It's a bit of fun sending this as Email to your team from time to time. I create
 
     #!/bin/bash
     statstmp=$(mktemp)
-    /usr/local/bin/requesttracker-stats/rt-stats > $statstmp
+    cd /usr/local/bin/requesttracker-stats/
+    ./rt-stats > $statstmp
     mail -s "RequestTracker-Stats for $(date +%B) $(date +%Y)" mail@address.com < $statstmp
     rm $statstmp
 
