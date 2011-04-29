@@ -41,7 +41,7 @@ request on github.
 ### Examples
 
 This is just one of all examples. Showing up the resolved tickets by users this
-month. See modules/ for all statistic data.
+month. See [https://gist.github.com/948075](https://gist.github.com/948075) for more details.
 
     Resolved ticket statistic for this month (April)
     ---------------------------------------------------

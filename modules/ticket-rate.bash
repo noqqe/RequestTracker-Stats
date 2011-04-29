@@ -1,4 +1,8 @@
 #!/bin/bash
+# ticket-rate: count tickets for each month
+# Copyright: (C) 2011 Florian Baumann <flo@noqqe.de>
+# License: GPL-3 <http://www.gnu.org/licenses/gpl-3.0.txt>
+# Date: Tuesday 2011-04-12
 
 date_count=01
 while [ $date_count -le $(date +%m) ]; do

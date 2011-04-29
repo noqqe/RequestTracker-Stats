@@ -1,4 +1,8 @@
 #!/bin/bash
+# user-activity: list a single activity chart for each user with tickets per month 
+# Copyright: (C) 2011 Florian Baumann <flo@noqqe.de>
+# License: GPL-3 <http://www.gnu.org/licenses/gpl-3.0.txt>
+# Date: Tuesday 2011-04-12
 echo
 for user in $(mysql $stats_sqlopts -e "use $stats_database; SELECT DISTINCT Owner FROM Tickets WHERE Owner <> 6;" | grep -v ^Owner); do
 
