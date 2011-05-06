@@ -20,14 +20,14 @@ for user in $(mysql $stats_sqlopts -e "use $stats_database; SELECT DISTINCT Owne
             AND Status=\"resolved\" \
             AND Tickets.LastUpdated LIKE \"$(date +%Y)-$date_count%\" \
             AND Tickets.Owner=\"$user\" \
-            GROUP BY Tickets.Owner;" | grep -v ^Tickets | awk "{print \"$date_count:\"\$1}" | $statistical_path
+            GROUP BY Tickets.Owner;" | grep -v ^Tickets | awk "{print \"$date_count:\"\$1}" 
 
             ((date_count++))
 
             if [ $date_count -le 9 ]; then
                 date_count=0$date_count
             fi 
-        done
+        done | $statistical_path
 
         echo
     fi 
