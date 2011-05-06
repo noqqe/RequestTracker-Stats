@@ -20,6 +20,33 @@ fi
 # To keep this the last line before you start using modules is very important!
 stats_sqlopts="--host=$stats_dbhost --port $stats_dbport --user=$stats_dbuser --password=$stats_dbpassword --batch"
 
+# Single module mode and help message
+if  [ $# -ne 0 ]; then
+    case $1 in 
+        -m) 
+            # Use module
+            if [ -r $2 ]; then
+                source $2
+                # Error in module
+                if [ $? -gt 0 ]; then
+                    echo "ERROR: Errors in module $2"
+                fi
+            else
+                # Not found
+                echo "ERROR: Could not find or read module: $2"
+            fi
+            ;;
+
+        --help|-h|*) 
+            # Help message
+            echo "Usage: "
+            echo " $0 "
+            echo " $0 [-m module]"
+            echo " $0 [--help]"
+            ;;
+    esac
+fi 
+
 ### Load modules
 echo "RequestTracker-Stats $(date +%B) $(date +%Y)"
 echo "==================================================="
