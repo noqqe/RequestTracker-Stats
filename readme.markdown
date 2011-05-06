@@ -38,6 +38,12 @@ new modules (what would be a great thing for me ;)) you could take a look at the
 module files. If you are ready, than feel free to mail me and/or send a pull
 request on github.
 
+Call a specific module 
+
+    $ ./rt-stats -m path/to/module
+    # for example:
+    $ ./rt-stats -m modules/status/status-year.bash
+
 ### Examples
 
 This is just one of all examples. Showing up the resolved tickets by users this

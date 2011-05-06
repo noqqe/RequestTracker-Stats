@@ -11,7 +11,7 @@ for user in $(mysql $stats_sqlopts -e "use $stats_database; SELECT DISTINCT Owne
         date_count=01
      
         echo "$(mysql $stats_sqlopts -e "USE $stats_database; SELECT Name from Users WHERE id=$user" | grep -v ^Name ) "
-        echo "---------------------------------------------------"
+        #echo "---------------------------------------------------"
     
         while [ $date_count -le $(date +%m) ]; do
             mysql $stats_sqlopts -e "use $stats_database; \

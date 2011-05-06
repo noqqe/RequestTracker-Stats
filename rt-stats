@@ -35,6 +35,7 @@ if  [ $# -ne 0 ]; then
                 # Not found
                 echo "ERROR: Could not find or read module: $2"
             fi
+            exit 0
             ;;
 
         --help|-h|*) 
@@ -52,52 +53,61 @@ echo "RequestTracker-Stats $(date +%B) $(date +%Y)"
 echo "==================================================="
 echo 
 
-echo "Resolved ticket statistic for this month ($(date +%B))"
+echo "Resolved tickets statistic"
 echo "---------------------------------------------------"
-source modules/user-this-month.bash
+echo "For this month ($(date +%B))"
+source modules/resolved-tickets/resolved-month.bash
 echo
 
-echo "Resolved ticket statistic for this year ($(date +%Y))"
-echo "---------------------------------------------------"
-source modules/user-this-year.bash
+echo "For last month ($(date --date="last month" +%B))"
+source modules/resolved-tickets/resolved-last-month.bash 
 echo 
 
-echo "Ticket status for this month ($(date +%B))"
-echo "---------------------------------------------------"
-source modules/ticket-actions-this-month.bash 
+echo "For this year ($(date +%Y))"
+source modules/resolved-tickets/resolved-year.bash 
 echo 
 
-echo "Ticket status for this year ($(date +%Y))"
+echo "Ticket status"
 echo "---------------------------------------------------"
-source modules/ticket-actions-this-year.bash 
+echo "For this month ($(date +%B))"
+source modules/status/status-month.bash
 echo 
 
-echo "Queues for this month ($(date +%B))"
-echo "---------------------------------------------------"
-source modules/queue-this-month.bash
+echo "For this year ($(date +%Y))"
+source modules/status/status-year.bash
 echo 
 
-echo "Queues for this year ($(date +%Y))"
+echo "Queues" 
 echo "---------------------------------------------------"
-source modules/queue-this-year.bash
+echo "For this month ($(date +%B))"
+source modules/queues/queue-month.bash
 echo 
 
-echo "Most active creators for this month ($(date +%B))"
-echo "---------------------------------------------------"
-source modules/creators-this-month.bash 
+echo "For last month ($(date --date="last month" +%B))"
+source modules/queues/queue-last-month.bash
 echo 
 
-echo "Most active creators for this year ($(date +%Y))"
-echo "---------------------------------------------------"
-source modules/creators-this-year.bash 
+echo "For this year ($(date +%Y))"
+source modules/queues/queue-year.bash
 echo 
 
-echo "Created tickets this year per month ($(date +%Y))"
+echo "Most active creators"
+echo "---------------------------------------------------"
+echo "For this month ($(date +%B))"
+source modules/ticket-creators/creators-month.bash 
+echo 
+
+echo "For this year ($(date +%Y))"
+echo "---------------------------------------------------"
+source modules/ticket-creators/creators-year.bash 
+echo 
+
+echo "Ticket creation rate per Month ($(date +%Y))"
 echo "---------------------------------------------------"
 source modules/ticket-rate.bash 
 echo 
 
-echo "Monthly activity by user for this year ($(date +%Y))"
+echo "Monthly activity by user ($(date +%Y))"
 echo "---------------------------------------------------"
 source modules/user-activity.bash 
 echo 
