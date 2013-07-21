@@ -13,7 +13,7 @@ while [ $date_count -le $(date +"%-m") ]; do
    count=$date_count
     fi
 
-    mysql $stats_sqlopts -e "use \"$stats_database\" ; \
+    mysql $stats_sqlopts -e "use $stats_database ; \
     SELECT COUNT(DISTINCT EffectiveID) AS Tickets \
     FROM Tickets \
     WHERE Created LIKE \"$(date +%Y)-$count%\" " | awk "{print \"$date_count:\"\$1}" | grep -v Tickets 

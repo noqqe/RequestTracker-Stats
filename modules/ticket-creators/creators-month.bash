@@ -36,7 +36,7 @@
 
 
 mysql $stats_sqlopts -e \
-        "use \"$stats_database\" ;\
+        "use $stats_database ;\
         SELECT COUNT(DISTINCT EffectiveID) AS Tickets, Users.EmailAddress \
         FROM Tickets, Users \
         WHERE Users.id=Tickets.Creator \
