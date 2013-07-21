@@ -5,7 +5,7 @@
 # Date: Tuesday 2011-04-12
 
 mysql $stats_sqlopts -e \
-        "use \"$stats_database\" ;\
+        "use $stats_database ;\
         SELECT Tickets.Status, COUNT(DISTINCT Tickets.EffectiveID) AS Tickets \
         FROM Tickets \
         WHERE LastUpdated LIKE \"$(date +%Y)%\" \

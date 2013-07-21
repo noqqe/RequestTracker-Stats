@@ -4,7 +4,7 @@
 # License: GPL-3 <http://www.gnu.org/licenses/gpl-3.0.txt>
 # Date: Tuesday 2011-04-12
 mysql $stats_sqlopts -e \
-        "use \"$stats_database\" ;\
+        "use $stats_database ;\
         SELECT COUNT(DISTINCT Tickets.EffectiveID) AS Tickets, Queues.Name \
         FROM Queues, Tickets \
         WHERE Tickets.Queue=Queues.id \
